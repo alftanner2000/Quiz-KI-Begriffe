@@ -2,97 +2,224 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>KI-Quizshow</title>
+<title>KI-Quizstation</title>
+
 <style>
 body {
   font-family: Arial, sans-serif;
+  background: #f4f6f8;
   text-align: center;
-  padding: 40px;
+  padding: 30px;
 }
-.box {
-  max-width: 700px;
+
+.container {
+  max-width: 900px;
   margin: auto;
 }
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.intro {
+  margin-bottom: 25px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card p {
+  margin: 5px 0 10px 0;
+}
+
 button {
-  font-size: 18px;
-  padding: 15px 25px;
-  margin: 10px;
+  background: #2d7ff9;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
   cursor: pointer;
-  width: 80%;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #1a5fd1;
+}
+
+.level {
+  font-size: 12px;
+  font-weight: bold;
+  color: #666;
+}
+
+.success {
+  margin-top: 20px;
+  font-weight: bold;
+  color: green;
 }
 </style>
+
 </head>
 <body>
 
-<div class="box">
-<h1>KI-Quizshow 🚀</h1>
+<div class="container">
 
-<p>
-1. Modus auswählen<br>
+<h1>KI-Quizstation 🚀</h1>
+
+<p class="intro">
+1. Quiz auswählen<br>
 2. Button klicken (Prompt wird kopiert)<br>
 3. In ChatGPT (oder andere KI) einfügen<br>
 4. Enter drücken & spielen 🎯
 </p>
 
-<button onclick="copyQuiz1()">🎤 Klassische Quizshow</button>
-<button onclick="copyQuiz2()">⚡ Schnelles Quiz (Blitzrunde)</button>
-<button onclick="copyQuiz3()">🎮 Challenge-Modus</button>
+<!-- Quiz 1 -->
+<div class="card">
+<h3>🎤 Showmaster-Quiz</h3>
+<p>Interaktive Quizshow mit Moderation, Feedback und steigender Schwierigkeit.</p>
+<span class="level">Level 1</span><br>
+<button onclick="copy1()">Prompt kopieren</button>
+</div>
 
-<p id="msg"></p>
+<!-- Quiz 2 -->
+<div class="card">
+<h3>⚡ Blitz-Quiz</h3>
+<p>Schnelle, einfache Fragen – perfekt zum Aktivieren.</p>
+<span class="level">Level 1</span><br>
+<button onclick="copy2()">Prompt kopieren</button>
+</div>
+
+<!-- Quiz 3 -->
+<div class="card">
+<h3>🎮 Challenge-Modus</h3>
+<p>Knifflige Fragen mit erweiterten Begriffen (Level 2 gekennzeichnet).</p>
+<span class="level">Level 2</span><br>
+<button onclick="copy3()">Prompt kopieren</button>
+</div>
+
+<!-- Quiz 4 -->
+<div class="card">
+<h3>🧠 Begriffe-Trainer</h3>
+<p>Erklärung + direkte Anwendung zentraler KI-Begriffe.</p>
+<span class="level">Level 1</span><br>
+<button onclick="copy4()">Prompt kopieren</button>
+</div>
+
+<!-- Quiz 5 -->
+<div class="card">
+<h3>👀 KI im Alltag</h3>
+<p>Erkenne KI-Anwendungen anhand von Beispielen.</p>
+<span class="level">Level 1–2</span><br>
+<button onclick="copy5()">Prompt kopieren</button>
+</div>
+
+<p id="msg" class="success"></p>
+
 </div>
 
 <script>
 
-function copyQuiz1() {
-const text = `Du bist der Moderator einer unterhaltsamen Quizshow zum Thema Künstliche Intelligenz.
+function copy1() {
+copy(`Du bist der Moderator einer unterhaltsamen Quizshow zum Thema Künstliche Intelligenz.
 
 Ziel:
 Die Teilnehmenden sollen spielerisch folgende Begriffe lernen:
-LLM, Computer Vision, Prompt, Token, Training, Daten, Kontext, Halluzination, Bias, Multimodalität
+LLM, Computer Vision, Prompt, Token, Training, Daten, Kontext
 
 Stil:
-- wie eine echte Quizshow 🎤
+- wie eine echte Quizshow
 - motivierend, leicht humorvoll
-- kurze, klare Fragen
+- kurze Fragen
 
-Stelle immer nur eine Frage und warte auf die Antwort.`;
-copy(text);
+Ablauf:
+- stelle eine Frage
+- warte auf Antwort
+- gib kurzes Feedback
+
+Immer nur eine Frage gleichzeitig.`);
 }
 
-function copyQuiz2() {
-const text = `Du bist ein schneller Quizmaster.
+function copy2() {
+copy(`Du bist ein schneller Quizmaster.
 
-Erstelle eine Blitzrunde zum Thema KI-Begriffe:
-LLM, Prompt, Token, Kontext, Bias
+Erstelle eine Blitzrunde zu KI-Begriffen:
+Prompt, Token, Kontext, LLM
 
 Regeln:
 - sehr kurze Fragen
-- sofort nächste Frage
-- max. Tempo
 - einfache Sprache
+- hohes Tempo
 
-Stelle immer nur eine Frage.`;
-copy(text);
+Immer nur eine Frage stellen.`);
 }
 
-function copyQuiz3() {
-const text = `Du bist ein Herausforderer in einem KI-Quiz.
+function copy3() {
+copy(`Du bist ein Herausforderer in einem anspruchsvollen KI-Quiz (Level 2).
 
-Teste mich zu:
-LLM, Computer Vision, Halluzination, Multimodalität
+Ziel:
+Teste mich zu grundlegenden UND erweiterten Begriffen.
 
-Mach es anspruchsvoller:
-- kleine Szenarien
-- knifflige Fragen
+Grundbegriffe:
+LLM, Prompt, Token, Kontext, Training
+
+Erweiterte Begriffe (Level 2):
+Wahrscheinlichkeit, Parameter, Modell, Multimodalität, Bias, Halluzination
+
+WICHTIG:
+Kennzeichne erweiterte Fragen immer mit:
+👉 (Level 2)
+
+Ablauf:
+- stelle eine Frage (Szenario oder Multiple Choice)
+- warte auf meine Antwort
+- gib kurzes Feedback (1–2 Sätze)
+
+Stil:
+- fordernd, aber verständlich
 - steigende Schwierigkeit
 
-Nach jeder Antwort kurze Erklärung.`;
-copy(text);
+Immer nur eine Frage gleichzeitig.`);
+}
+
+function copy4() {
+copy(`Du bist ein Lern-Coach.
+
+Erkläre und trainiere folgende Begriffe:
+LLM, Prompt, Token, Kontext, Training
+
+Ablauf:
+- kurze Erklärung (1–2 Sätze)
+- dann eine Frage
+- direkt Feedback
+
+Immer nur eine Frage stellen.`);
+}
+
+function copy5() {
+copy(`Du bist ein KI-Alltags-Checker.
+
+Gib Beispiele aus dem Alltag.
+
+Frage:
+Handelt es sich um KI oder nicht?
+
+Baue kleine Rätsel ein.
+Nach jeder Antwort kurz erklären.`);
 }
 
 function copy(text) {
 navigator.clipboard.writeText(text);
-document.getElementById("msg").innerText = "✅ Prompt kopiert!";
+document.getElementById("msg").innerText = "✅ Prompt kopiert! Jetzt in ChatGPT einfügen.";
 }
 
 </script>
