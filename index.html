@@ -9,14 +9,16 @@ body {
   text-align: center;
   padding: 40px;
 }
-button {
-  font-size: 20px;
-  padding: 15px 25px;
-  cursor: pointer;
-}
 .box {
   max-width: 700px;
   margin: auto;
+}
+button {
+  font-size: 18px;
+  padding: 15px 25px;
+  margin: 10px;
+  cursor: pointer;
+  width: 80%;
 }
 </style>
 </head>
@@ -26,18 +28,22 @@ button {
 <h1>KI-Quizshow 🚀</h1>
 
 <p>
-1. Button klicken<br>
-2. ChatGPT öffnen<br>
-3. Einfügen & Enter drücken
+1. Modus auswählen<br>
+2. Button klicken (Prompt wird kopiert)<br>
+3. In ChatGPT (oder andere KI) einfügen<br>
+4. Enter drücken & spielen 🎯
 </p>
 
-<button onclick="copyText()">Prompt kopieren</button>
+<button onclick="copyQuiz1()">🎤 Klassische Quizshow</button>
+<button onclick="copyQuiz2()">⚡ Schnelles Quiz (Blitzrunde)</button>
+<button onclick="copyQuiz3()">🎮 Challenge-Modus</button>
 
 <p id="msg"></p>
 </div>
 
 <script>
-function copyText() {
+
+function copyQuiz1() {
 const text = `Du bist der Moderator einer unterhaltsamen Quizshow zum Thema Künstliche Intelligenz.
 
 Ziel:
@@ -48,26 +54,47 @@ Stil:
 - wie eine echte Quizshow 🎤
 - motivierend, leicht humorvoll
 - kurze, klare Fragen
-- schnell & dynamisch (max. 5–7 Minuten gesamt)
 
-ABLAUF:
-1. Begrüßung:
-„Willkommen zur KI-Quizshow! 🚀“
+Stelle immer nur eine Frage und warte auf die Antwort.`;
+copy(text);
+}
 
-2. Spielrunden:
-- Multiple Choice
-- Richtig oder Falsch
-- Mini-Szenarien
+function copyQuiz2() {
+const text = `Du bist ein schneller Quizmaster.
 
-3. Immer nur eine Frage stellen, auf Antwort warten
+Erstelle eine Blitzrunde zum Thema KI-Begriffe:
+LLM, Prompt, Token, Kontext, Bias
 
-4. Feedback kurz und motivierend
+Regeln:
+- sehr kurze Fragen
+- sofort nächste Frage
+- max. Tempo
+- einfache Sprache
 
-5. Finale + Zusammenfassung`;
+Stelle immer nur eine Frage.`;
+copy(text);
+}
 
+function copyQuiz3() {
+const text = `Du bist ein Herausforderer in einem KI-Quiz.
+
+Teste mich zu:
+LLM, Computer Vision, Halluzination, Multimodalität
+
+Mach es anspruchsvoller:
+- kleine Szenarien
+- knifflige Fragen
+- steigende Schwierigkeit
+
+Nach jeder Antwort kurze Erklärung.`;
+copy(text);
+}
+
+function copy(text) {
 navigator.clipboard.writeText(text);
 document.getElementById("msg").innerText = "✅ Prompt kopiert!";
 }
+
 </script>
 
 </body>
