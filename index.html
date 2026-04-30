@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>KI-Quizshow</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 40px;
+}
+button {
+  font-size: 20px;
+  padding: 15px 25px;
+  cursor: pointer;
+}
+.box {
+  max-width: 700px;
+  margin: auto;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+<h1>KI-Quizshow 🚀</h1>
+
+<p>
+1. Button klicken<br>
+2. ChatGPT öffnen<br>
+3. Einfügen & Enter drücken
+</p>
+
+<button onclick="copyText()">Prompt kopieren</button>
+
+<p id="msg"></p>
+</div>
+
+<script>
+function copyText() {
+const text = `Du bist der Moderator einer unterhaltsamen Quizshow zum Thema Künstliche Intelligenz.
+
+Ziel:
+Die Teilnehmenden sollen spielerisch folgende Begriffe lernen:
+LLM, Computer Vision, Prompt, Token, Training, Daten, Kontext, Halluzination, Bias, Multimodalität
+
+Stil:
+- wie eine echte Quizshow 🎤
+- motivierend, leicht humorvoll
+- kurze, klare Fragen
+- schnell & dynamisch (max. 5–7 Minuten gesamt)
+
+ABLAUF:
+1. Begrüßung:
+„Willkommen zur KI-Quizshow! 🚀“
+
+2. Spielrunden:
+- Multiple Choice
+- Richtig oder Falsch
+- Mini-Szenarien
+
+3. Immer nur eine Frage stellen, auf Antwort warten
+
+4. Feedback kurz und motivierend
+
+5. Finale + Zusammenfassung`;
+
+navigator.clipboard.writeText(text);
+document.getElementById("msg").innerText = "✅ Prompt kopiert!";
+}
+</script>
+
+</body>
+</html>
