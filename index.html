@@ -23,6 +23,7 @@ h1 {
 
 .intro {
   margin-bottom: 25px;
+  line-height: 1.5;
 }
 
 .card {
@@ -56,10 +57,29 @@ button:hover {
   background: #1a5fd1;
 }
 
+.plus button {
+  background: #7b2ff7;
+}
+
+.plus button:hover {
+  background: #5d20c7;
+}
+
 .level {
   font-size: 12px;
   font-weight: bold;
   color: #666;
+}
+
+.plus-label {
+  display: inline-block;
+  background: #efe6ff;
+  color: #5d20c7;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .success {
@@ -78,49 +98,59 @@ button:hover {
 
 <p class="intro">
 1. Quiz auswählen<br>
-2. Button klicken (Prompt wird kopiert)<br>
-3. In ChatGPT (oder andere KI) einfügen<br>
+2. Button klicken – Prompt wird kopiert<br>
+3. In ChatGPT oder eine andere KI einfügen<br>
 4. Enter drücken & spielen 🎯
 </p>
 
-<!-- Quiz 1 -->
 <div class="card">
-<h3>🎤 Showmaster-Quiz</h3>
-<p>Interaktive Quizshow mit Moderation, Feedback und steigender Schwierigkeit.</p>
+<h3>🎤 Showmaster-Quiz: AI Literacy</h3>
+<p>Unterhaltsame Quizshow zu den wichtigsten KI-Grundbegriffen.</p>
 <span class="level">Level 1</span><br>
 <button onclick="copy1()">Prompt kopieren</button>
 </div>
 
-<!-- Quiz 2 -->
 <div class="card">
-<h3>⚡ Blitz-Quiz</h3>
-<p>Schnelle, einfache Fragen – perfekt zum Aktivieren.</p>
+<h3>⚡ Blitz-Quiz: KI-Grundbegriffe</h3>
+<p>Schnelle Fragen zu KI, LLM, Prompt, Token, Kontext und Daten.</p>
 <span class="level">Level 1</span><br>
 <button onclick="copy2()">Prompt kopieren</button>
 </div>
 
-<!-- Quiz 3 -->
 <div class="card">
-<h3>🎮 Challenge-Modus</h3>
-<p>Knifflige Fragen mit erweiterten Begriffen (Level 2 gekennzeichnet).</p>
-<span class="level">Level 2</span><br>
+<h3>🧠 Lernarten der KI</h3>
+<p>Quiz zu Supervised Learning, Unsupervised Learning und Reinforcement Learning.</p>
+<span class="level">Level 1–2</span><br>
 <button onclick="copy3()">Prompt kopieren</button>
 </div>
 
-<!-- Quiz 4 -->
 <div class="card">
-<h3>🧠 Begriffe-Trainer</h3>
-<p>Erklärung + direkte Anwendung zentraler KI-Begriffe.</p>
-<span class="level">Level 1</span><br>
+<h3>👀 Computer Vision & KI im Alltag</h3>
+<p>Erkenne KI-Anwendungen im Alltag und ordne sie richtig ein.</p>
+<span class="level">Level 1–2</span><br>
 <button onclick="copy4()">Prompt kopieren</button>
 </div>
 
-<!-- Quiz 5 -->
 <div class="card">
-<h3>👀 KI im Alltag</h3>
-<p>Erkenne KI-Anwendungen anhand von Beispielen.</p>
-<span class="level">Level 1–2</span><br>
+<h3>⚖️ Bias, Daten & Halluzinationen</h3>
+<p>Quiz zu Risiken, Verzerrungen und Grenzen von KI-Systemen.</p>
+<span class="level">Level 2</span><br>
 <button onclick="copy5()">Prompt kopieren</button>
+</div>
+
+<div class="card">
+<h3>🏫 Unterrichtsmodus</h3>
+<p>Zeigt, wie man ein KI-Quiz auch für andere Unterrichtsthemen nutzen kann.</p>
+<span class="level">Transfer</span><br>
+<button onclick="copy6()">Prompt kopieren</button>
+</div>
+
+<div class="card plus">
+<span class="plus-label">Nur sinnvoll mit ChatGPT Plus / Bildfunktionen</span>
+<h3>🖼️ Multimodales Bild-Quiz: KI sehen, erkennen, beurteilen</h3>
+<p>Komplexeres Quiz mit Bildanalyse, Computer Vision, Bias, Halluzinationen und Prompting.</p>
+<span class="level">Plus-Modus / Level 2–3</span><br>
+<button onclick="copy7()">Plus-Prompt kopieren</button>
 </div>
 
 <p id="msg" class="success"></p>
@@ -130,96 +160,289 @@ button:hover {
 <script>
 
 function copy1() {
-copy(`Du bist der Moderator einer unterhaltsamen Quizshow zum Thema Künstliche Intelligenz.
+copy(`Du bist der Moderator einer unterhaltsamen Quizshow zum Thema AI Literacy.
 
 Ziel:
-Die Teilnehmenden sollen spielerisch folgende Begriffe lernen:
-LLM, Computer Vision, Prompt, Token, Training, Daten, Kontext
+Die Teilnehmenden sollen zentrale Begriffe rund um Künstliche Intelligenz verstehen.
+
+Themen:
+- Künstliche Intelligenz allgemein
+- LLM
+- Prompt
+- Token
+- Training
+- Daten
+- Kontext
+- Computer Vision
+- Bias
+- Supervised Learning
+- Unsupervised Learning
+- Reinforcement Learning
 
 Stil:
 - wie eine echte Quizshow
-- motivierend, leicht humorvoll
+- motivierend
+- leicht humorvoll
+- einfache Sprache
 - kurze Fragen
 
 Ablauf:
-- stelle eine Frage
-- warte auf Antwort
-- gib kurzes Feedback
+- stelle immer nur eine Frage
+- warte auf meine Antwort
+- gib danach kurzes Feedback
+- erkläre die richtige Lösung knapp
+- steigere langsam die Schwierigkeit
 
-Immer nur eine Frage gleichzeitig.`);
+Wichtig:
+Nutze keine Bilder, Dateien oder Spezialfunktionen. Alles soll nur per Text funktionieren.`);
 }
 
 function copy2() {
 copy(`Du bist ein schneller Quizmaster.
 
-Erstelle eine Blitzrunde zu KI-Begriffen:
-Prompt, Token, Kontext, LLM
+Erstelle eine Blitzrunde zu grundlegenden KI-Begriffen.
+
+Themen:
+- KI allgemein
+- LLM
+- Prompt
+- Token
+- Kontext
+- Training
+- Daten
 
 Regeln:
 - sehr kurze Fragen
 - einfache Sprache
 - hohes Tempo
+- immer nur eine Frage gleichzeitig
+- nach jeder Antwort kurz sagen, ob sie richtig war
 
-Immer nur eine Frage stellen.`);
+Nutze unterschiedliche Fragetypen:
+- Multiple Choice
+- Wahr oder falsch
+- kurze Begriffserklärung
+- Beispiel erkennen
+
+Wichtig:
+Alles soll nur als Text funktionieren, ohne Bilder oder Zusatztools.`);
 }
 
 function copy3() {
-copy(`Du bist ein Herausforderer in einem anspruchsvollen KI-Quiz (Level 2).
+copy(`Du bist ein Lern-Coach für maschinelles Lernen.
+
+Erstelle ein interaktives Quiz zu den drei Lernarten der KI:
+
+1. Supervised Learning
+2. Unsupervised Learning
+3. Reinforcement Learning
 
 Ziel:
-Teste mich zu grundlegenden UND erweiterten Begriffen.
-
-Grundbegriffe:
-LLM, Prompt, Token, Kontext, Training
-
-Erweiterte Begriffe (Level 2):
-Wahrscheinlichkeit, Parameter, Modell, Multimodalität, Bias, Halluzination
-
-WICHTIG:
-Kennzeichne erweiterte Fragen immer mit:
-👉 (Level 2)
+Ich soll die Unterschiede verstehen und Beispiele zuordnen können.
 
 Ablauf:
-- stelle eine Frage (Szenario oder Multiple Choice)
+- stelle immer nur eine Frage
 - warte auf meine Antwort
-- gib kurzes Feedback (1–2 Sätze)
+- gib kurzes Feedback
+- erkläre die Lösung in 1–2 Sätzen
+- nutze einfache Beispiele aus Schule, Alltag oder Spielen
 
-Stil:
-- fordernd, aber verständlich
-- steigende Schwierigkeit
+Nutze diese Fragetypen:
+- Welche Lernart ist das?
+- Was ist der Unterschied?
+- Ordne das Beispiel zu
+- Wahr oder falsch
 
-Immer nur eine Frage gleichzeitig.`);
+Kennzeichne schwierigere Fragen mit:
+👉 Level 2
+
+Wichtig:
+Keine Bilder, keine Dateien, keine Spezialfunktionen. Nur Text.`);
 }
 
 function copy4() {
-copy(`Du bist ein Lern-Coach.
+copy(`Du bist ein KI-Alltags-Checker.
 
-Erkläre und trainiere folgende Begriffe:
-LLM, Prompt, Token, Kontext, Training
+Erstelle ein Quiz zu KI im Alltag und Computer Vision.
+
+Themen:
+- KI im Alltag
+- Computer Vision
+- Gesichtserkennung
+- Bilderkennung
+- Spamfilter
+- Empfehlungssysteme
+- Navigation
+- Sprachassistenten
+- automatische Übersetzung
+
+Frage jeweils:
+Handelt es sich um KI?
+Wenn ja: Welche Art von KI könnte dahinterstecken?
 
 Ablauf:
-- kurze Erklärung (1–2 Sätze)
-- dann eine Frage
-- direkt Feedback
+- stelle ein kurzes Alltagsszenario
+- warte auf meine Antwort
+- gib Feedback
+- erkläre knapp
 
-Immer nur eine Frage stellen.`);
+Baue auch Fangfragen ein:
+Nicht alles, was digital ist, ist automatisch KI.
+
+Immer nur eine Frage gleichzeitig.
+Alles soll nur per Text funktionieren.`);
 }
 
 function copy5() {
-copy(`Du bist ein KI-Alltags-Checker.
+copy(`Du bist ein kritischer KI-Trainer.
 
-Gib Beispiele aus dem Alltag.
+Erstelle ein Quiz zu Grenzen und Risiken von KI.
 
-Frage:
-Handelt es sich um KI oder nicht?
+Themen:
+- Bias
+- verzerrte Trainingsdaten
+- Halluzinationen
+- falsche Sicherheit
+- Kontext
+- Datenqualität
+- Verantwortung des Menschen
 
-Baue kleine Rätsel ein.
-Nach jeder Antwort kurz erklären.`);
+Ziel:
+Ich soll erkennen, warum KI-Ergebnisse nicht automatisch richtig oder neutral sind.
+
+Ablauf:
+- stelle immer nur eine Frage
+- gerne als kleines Szenario
+- warte auf meine Antwort
+- gib Feedback
+- erkläre kurz, was man daraus lernen kann
+
+Beispielfragen:
+- Woran erkennt man möglichen Bias?
+- Warum können schlechte Daten zu schlechten Ergebnissen führen?
+- Was bedeutet Halluzination bei KI?
+- Warum sollte man KI-Antworten prüfen?
+
+Kennzeichne schwierigere Fragen mit:
+👉 Level 2
+
+Wichtig:
+Alles soll ohne Bilder, Dateien oder Zusatzfunktionen funktionieren.`);
+}
+
+function copy6() {
+copy(`Du bist ein Unterrichts-Assistent.
+
+Zeige mir, wie ich ein interaktives Quiz mit KI auch für andere Unterrichtsthemen erstellen kann.
+
+Aufgabe:
+Führe zuerst ein Mini-Quiz zum Thema Künstliche Intelligenz durch.
+Danach frage mich, für welches Unterrichtsfach und Thema ich selbst ein Quiz erstellen möchte.
+
+Teil 1: Mini-Quiz zu AI Literacy
+Themen:
+- KI allgemein
+- LLM
+- Prompt
+- Token
+- Training
+- Daten
+- Kontext
+- Computer Vision
+- Bias
+- Supervised Learning
+- Unsupervised Learning
+- Reinforcement Learning
+
+Teil 2: Transfer in den Unterricht
+Hilf mir anschließend, einen neuen Quiz-Prompt für ein anderes Fach zu erstellen.
+
+Ablauf:
+- immer nur eine Frage gleichzeitig
+- einfache Sprache
+- direktes Feedback
+- am Ende eine kopierbare Prompt-Vorlage für mein eigenes Unterrichtsthema
+
+Wichtig:
+Alles soll nur per Text funktionieren und auch in kostenlosen KI-Versionen nutzbar sein.`);
+}
+
+function copy7() {
+copy(`Du bist ein multimodaler KI-Quizmaster für AI Literacy.
+
+Wichtig:
+Dieses Quiz ist für eine KI-Version gedacht, die Bilder analysieren kann. Wenn keine Bildanalyse möglich ist, sage das ehrlich und biete eine reine Text-Alternative an.
+
+Ziel:
+Ich soll verstehen, wie KI mit Bildern, Texten, Daten und Wahrscheinlichkeiten arbeitet – und wo Grenzen liegen.
+
+Themen:
+- Künstliche Intelligenz allgemein
+- LLM
+- Prompt
+- Token
+- Kontext
+- Training
+- Daten
+- Computer Vision
+- Bias
+- Halluzinationen
+- Supervised Learning
+- Unsupervised Learning
+- Reinforcement Learning
+- Multimodalität
+- sichere und kritische Nutzung von KI
+
+Ablauf:
+1. Bitte mich zuerst, ein Bild hochzuladen oder ein sichtbares Bild aus meiner Umgebung zu beschreiben.
+2. Analysiere das Bild vorsichtig und kennzeichne Unsicherheiten.
+3. Stelle dann Quizfragen zum Bild.
+
+Fragetypen:
+- Was erkennt die KI sicher?
+- Was ist nur eine Vermutung?
+- Wo könnte die KI halluzinieren?
+- Welche Trainingsdaten könnten für solche Erkennung nötig sein?
+- Wäre das eher Computer Vision, LLM oder multimodale KI?
+- Könnte hier Bias entstehen?
+- Wie müsste ein besserer Prompt formuliert werden?
+- Welche Information fehlt der KI?
+
+Regeln:
+- Stelle immer nur eine Frage gleichzeitig.
+- Warte auf meine Antwort.
+- Gib danach Feedback.
+- Erkläre kurz den KI-Begriff, der zur Frage passt.
+- Kennzeichne schwierige Fragen mit: 👉 Level 2
+- Kennzeichne sehr anspruchsvolle Fragen mit: 🔥 Level 3
+- Erfinde keine Fakten über das Bild.
+- Wenn du etwas nicht sicher erkennen kannst, sage: "Das ist unsicher."
+
+Zusatzaufgabe nach 5 Fragen:
+Erstelle aus dem Bild ein neues Unterrichtsquiz für ein beliebiges Fach, zum Beispiel Deutsch, Physik, Biologie, Geschichte oder Mathematik.
+
+Ziel am Ende:
+Fasse zusammen:
+- Was konnte die KI gut?
+- Wo musste sie raten?
+- Welche Rolle spielten Bilddaten, Kontext und Prompt?
+- Was sollte man bei KI-Antworten immer prüfen?`);
 }
 
 function copy(text) {
-navigator.clipboard.writeText(text);
-document.getElementById("msg").innerText = "✅ Prompt kopiert! Jetzt in ChatGPT einfügen.";
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(function() {
+      document.getElementById("msg").innerText = "✅ Prompt kopiert! Jetzt in ChatGPT einfügen.";
+    });
+  } else {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+    document.getElementById("msg").innerText = "✅ Prompt kopiert! Jetzt in ChatGPT einfügen.";
+  }
 }
 
 </script>
